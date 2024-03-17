@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <!---<title> Responsive Registration Form | CodingLab </title>--->
+  <link rel="stylesheet" href="assets/css/formstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Phone validation -->
+  <script type="text/javascript">
+    var reg = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+    function PhoneValidation(phoneNumber) {
+      var OK = reg.exec(phoneNumber.value);
+      if (!OK)
+        window.alert("phone number isn't  valid");
+      else
+        window.alert("phone number is  valid");
+    }
+  </script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <div class="container" style="background: linear-gradient(135deg, #71b7e6, #9b59b6);" width="auto">
+    <div class="title">MU Club Registration</div>
+    <div class="content">
+      <form name="form1" action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Father's Name</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+
+
+
+            <span class="details">Email</span>
+            <input type="text" name="email" placeholder="Enter your email" required
+              onclick="ValidateEmail(document.form1.email)">
+          </div>
+          <div class="input-box">
+            <span class="details">Enrolment No.</span>
+            <input type="text" placeholder="Enter your enrolment number" required>
+          </div>
+
+          <!-- done -->
+          <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input name="txtPhone" onchange="PhoneValidation(this);" type="text" placeholder="Enter your phone number"
+              required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Date of Birth</span>
+            <input type="date" placeholder="Select Birth date" required name="birthdate">
+          </div>
+
+          <div class="input-box">
+            <span class="details">Blood Group</span>
+            <select>
+              <!-- option tag starts -->
+              <option>Select Blood Group</option>
+              <option value="O positive">O +ve</option>
+              <option value="O negative">O -ve</option>
+              <option value="A positive">A +ve</option>
+              <option value="A negative">A -ve</option>
+              <option value="B positive">B +ve</option>
+              <option value="B negative">B -ve</option>
+              <option value="AB positive">AB +ve</option>
+              <option value="AB negative">AB -ve</option>
+              <!-- option tag ends -->
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Clubs</span>
+            <script>
+              $('#Clubs_').multiselect({
+                columns: 1,
+                placeholder: 'Select Languages'
+              });
+            </script>
+            <select class="clu" id="Clubs_[]" multiple id="Clubs_">
+              <!-- option tag starts -->
+              <option value="1"> MU Social Awareness & Environment Sustainance Club</option>
+              <option value="2">Language & Literary Club</option>
+              <option value="3">Games & Sports Club</option>
+              <option value="4">Adventure Tourism & Recreation Club</option>
+              <option value="5">Dramatics &
+                Music Club</option>
+              <option value="6">Holistic Health & Wellness Club</option>
+              <option value="7">Health & Nutrition Club</option>
+              <option value="8">Arts, Multimedia & Creativity Club</option>
+              <option value="9">AR, VR, AI & Data Analytics Club</option>
+              <option value="10"> Robotics Automation Planning & Design Club </option>
+              <option value="11">Incubation,
+                Innovation & Design Club</option>
+              <option value="12">Industry-Academia Interaction Club</option>
+              <option value="13">Outreach Fitness Club</option>
+              <!-- option tag ends -->
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Course(Branch)</span>
+            <select class="stream">
+              <!-- option tag starts -->
+              <option>Choose your Stream</option>
+              <option value="BJ">B.J. {Bachelor of Journalism and Mass Communication}"</option>
+              <option value="BTech">B.Tech. (Civil Engineering)</option>
+              <option value="BTech">B.Tech. (Computer Science and Engineering)</option>
+              <option value="BTech">B.Tech. (Electrical and Electronics Engineering)</option>
+              <option value="BTech">B.Tech. (Mechanical Engineering)</option>
+
+              <option value="BA">B.A. (Journalism and Mass Communication)</option>
+              <option value="BA">B.A. (Tourism and Hospitality)</option>
+              <option value="BA">B.A. (Fashion Design)</option>
+              <option value="BAMS">B.A.M.S.</option>
+              <option value="BBA">B.B.A.</option>
+              <option value="BCom">B.Com.(Banking and Insurance)</option>
+              <option value="BEd">B.Ed.</option>
+              <option value="BLib">B.Lib.Science</option>
+              <option value="BSc">B.Sc. (Industrial Chemistry)</option>
+              <option value="BSc">B.Sc. (Computer Science)</option>
+              <option value="BSc">B.Sc. Hons. (Microbiology)</option>
+              <option value="BSc">B.Sc. Hons. (Biotechnology)</option>
+              <option value="BSc">B.Sc. (Agriculture)</option>
+              <option value="BPharma">B.Pharma</option>
+              <option value="BPE">B.Phy.Ed.</option>
+              <option value="BCA">BCA</option>
+              <option value="BCA">BCA in Cloud Computing</option>
+              <option value="DCA">DCA (Diploma in Computer Applications)</option>
+              <option value="DGD">DGD (Diploma in Graphics Design)</option>
+              <option value="DCivil">Diploma in Civil Engineering</option>
+              <option value="DEEE">Diploma in Electrical Engineering</option>
+              <option value="DMech">Diploma in Mechanical Engineering</option>
+              <option value="DPharma">Diploma in Pharmacy</option>
+
+              <!-- option tag ends -->
+            </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Today's Date</span>
+            <input type="date" placeholder="Select today's date" required name="today">
+          </div>
+          <div class="input-box">
+            <span class="details">Permanent Address</span>
+            <input type="text" placeholder="Enter your address" required>
+          </div>
+        </div>
+
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Template Main JS File -->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- JS & CSS library of MultiSelect plugin -->
+  <script src="multiselect/jquery.multiselect.js"></script>
+  <link rel="stylesheet" href="multiselect/jquery.multiselect.css">
+
+</body>
+
+</html>
